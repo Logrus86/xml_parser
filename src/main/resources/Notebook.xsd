@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.com/HwShop"
+           xmlns="http://www.example.com/HwShop">
+    <xs:include schemaLocation="Cpu.xsd"/>
+    <xs:include schemaLocation="Hdd.xsd"/>
+    <xs:include schemaLocation="Ram.xsd"/>
+    <xs:include schemaLocation="Videocard.xsd"/>
+    <xs:include schemaLocation="Monitor.xsd"/>
+
+    <xs:complexType name="NotebookEntity">
+        <xs:sequence>
+            <xs:element name="displaySizeInches" type="xs:int"/>
+            <xs:element name="Cpu" type="CpuEntity"/>
+            <xs:element name="Hdd" type="HddEntity"/>
+            <xs:element name="Ram" type="RamEntity"/>
+            <xs:element name="Videocard" type="VideocardEntity"/>
+            <xs:element name="displayResolution" type="DisplayResolutionType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

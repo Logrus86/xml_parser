@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.com/HwShop"
+           xmlns="http://www.example.com/HwShop">
+    <xs:include schemaLocation="Cpu.xsd"/>
+    <xs:include schemaLocation="Hdd.xsd"/>
+    <xs:include schemaLocation="Ram.xsd"/>
+    <xs:include schemaLocation="Videocard.xsd"/>
+    <xs:include schemaLocation="Monitor.xsd"/>
+
+    <xs:complexType name="PcEntity">
+        <xs:sequence>
+            <xs:element name="Cpu" type="CpuEntity"/>
+            <xs:element name="Hdd" type="HddEntity"/>
+            <xs:element name="Ram" type="RamEntity"/>
+            <xs:element name="Videocard" type="VideocardEntity"/>
+            <xs:element name="Monitor" type="MonitorEntity"/>
+            <xs:element name="mouseAndKeyboardIncluded" type="xs:boolean"/>
+            <xs:element name="speakersIncluded" type="xs:boolean"/>
+            <xs:element name="PreinstalledOs" type="PreinstalledOsType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="PreinstalledOsType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NONE"/>
+            <xs:enumeration value="DOS"/>
+            <xs:enumeration value="LINUX"/>
+            <xs:enumeration value="MACOSX"/>
+            <xs:enumeration value="MSWINDOWS7"/>
+            <xs:enumeration value="MSWINDOWS8"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

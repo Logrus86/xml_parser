@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.com/HwShop"
+           xmlns="http://www.example.com/HwShop">
+    <xs:include schemaLocation="Cpu.xsd"/>
+    <xs:include schemaLocation="Hdd.xsd"/>
+    <xs:include schemaLocation="Monitor.xsd"/>
+    <xs:include schemaLocation="Motherboard.xsd"/>
+    <xs:include schemaLocation="Ram.xsd"/>
+    <xs:include schemaLocation="Videocard.xsd"/>
+    <xs:include schemaLocation="Notebook.xsd"/>
+    <xs:include schemaLocation="Pc.xsd"/>
+
+    <xs:complexType name="WareEntity" mixed="true">
+        <xs:sequence>
+            <xs:element name="Type" type="WareType"/>
+            <xs:element name="Price" type="xs:int"/>
+            <xs:element name="Weight" type="xs:int"/>
+            <xs:element name="Model" type="xs:string"/>
+            <xs:element name="Vendor" type="VendorType"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="WareType">
+        <xs:choice>
+            <xs:element name="Cpu" type="CpuEntity"/>
+            <xs:element name="Hdd" type="HddEntity"/>
+            <xs:element name="Monitor" type="MonitorEntity"/>
+            <xs:element name="Motherboard" type="MotherboardEntity"/>
+            <xs:element name="Ram" type="RamEntity"/>
+            <xs:element name="VideoCard" type="VideocardEntity"/>
+            <xs:element name="Notebook" type="NotebookEntity"/>
+            <xs:element name="Pc" type="PcEntity"/>
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:simpleType name="VendorType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="AMD"/>
+            <xs:enumeration value="INTEL"/>
+            <xs:enumeration value="NVIDIA"/>
+            <xs:enumeration value="ASUS"/>
+            <xs:enumeration value="HP"/>
+            <xs:enumeration value="DELL"/>
+            <xs:enumeration value="LENOVO"/>
+            <xs:enumeration value="ACER"/>
+            <xs:enumeration value="SAMSUNG"/>
+            <xs:enumeration value="APPLE"/>
+            <xs:enumeration value="TOSHIBA"/>
+            <xs:enumeration value="GIGABYTE"/>
+            <xs:enumeration value="MSI"/>
+            <xs:enumeration value="PHILLIPS"/>
+            <xs:enumeration value="SONY"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

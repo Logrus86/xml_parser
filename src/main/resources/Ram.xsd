@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.com/HwShop"
+           xmlns="http://www.example.com/HwShop">
+
+    <xs:complexType name="RamEntity">
+        <xs:sequence>
+            <xs:element name="capacityMb" type="xs:int"/>
+            <xs:element name="maxFrequencyMHz" type="xs:int"/>
+            <xs:element name="RamType" type="RamType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="RamType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DDR2"/>
+            <xs:enumeration value="DDR3"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

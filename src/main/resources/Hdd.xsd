@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.com/HwShop"
+           xmlns="http://www.example.com/HwShop">
+
+    <xs:complexType name="HddEntity">
+        <xs:sequence>
+            <xs:element name="capacityGb" type="xs:int"/>
+            <xs:element name="rotatingSpeedRpm" type="xs:int"/>
+            <xs:element name="formfactorHdd" type="FormFactorHddType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="FormFactorHddType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="INCHES2DOT5"/>
+            <xs:enumeration value="INCHES3DOT5"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

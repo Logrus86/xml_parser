@@ -1,0 +1,48 @@
+<hws:HwShop xmlns:hws="http://www.example.com/HwShop">
+    <Title>XML-based hardware shop</Title>
+    <Address>Somethere in the Universe</Address>
+    <Wares>
+        <Ware id="1">
+            <Type>
+                <Cpu>
+                    <frequencyMHz>2200</frequencyMHz>
+                    <coreQuantity>2</coreQuantity>
+                    <techProcessNm>40</techProcessNm>
+                    <socket>FM1</socket>
+                </Cpu>
+            </Type>
+            <Price>12400</Price>
+            <Weight>60</Weight>
+            <Model>Fenom2</Model>
+            <Vendor>AMD</Vendor>
+        </Ware>
+        <Ware id="2">
+            <Type>
+                <Hdd>
+                    <capacityGb>1500</capacityGb>
+                    <rotatingSpeedRpm>7200</rotatingSpeedRpm>
+                    <formfactorHdd>INCHES2DOT5</formfactorHdd>
+                </Hdd>
+            </Type>
+            <Price>32000</Price>
+            <Weight>300</Weight>
+            <Model>HD150</Model>
+            <Vendor>TOSHIBA</Vendor>
+        </Ware>
+        <Ware id="3">
+            <Type>
+                <VideoCard>
+                    <ramSizeMb>2048</ramSizeMb>
+                    <ramFrequencyMHz>5600</ramFrequencyMHz>
+                    <cpuFrequencyMHz>1050</cpuFrequencyMHz>
+                    <busWidthBit>256</busWidthBit>
+                    <VideoCardChipset>RADEON</VideoCardChipset>
+                </VideoCard>
+            </Type>
+            <Price>41000</Price>
+            <Weight>2200</Weight>
+            <Model>R9-270X</Model>
+            <Vendor>GIGABYTE</Vendor>
+        </Ware>
+    </Wares>
+</hws:HwShop>

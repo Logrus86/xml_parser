@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.com/HwShop"
+           xmlns="http://www.example.com/HwShop">
+
+    <xs:complexType name="MonitorEntity">
+        <xs:sequence>
+            <xs:element name="displaySizeInches" type="xs:int"/>
+            <xs:element name="vgaOut" type="xs:boolean"/>
+            <xs:element name="dviOut" type="xs:boolean"/>
+            <xs:element name="hdmiOut" type="xs:boolean"/>
+            <xs:element name="speakersBuiltin" type="xs:boolean"/>
+            <xs:element name="displayResolution" type="DisplayResolutionType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="DisplayResolutionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="H1920V1080"/>
+            <xs:enumeration value="H1366V768"/>
+            <xs:enumeration value="H1600V900"/>
+            <xs:enumeration value="H1920V1200"/>
+            <xs:enumeration value="H2560V1080"/>
+            <xs:enumeration value="H2560V1440"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

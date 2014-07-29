@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.com/HwShop"
+           xmlns="http://www.example.com/HwShop">
+
+    <xs:complexType name="VideocardEntity">
+        <xs:sequence>
+            <xs:element name="ramSizeMb" type="xs:int"/>
+            <xs:element name="ramFrequencyMHz" type="xs:int"/>
+            <xs:element name="cpuFrequencyMHz" type="xs:int"/>
+            <xs:element name="busWidthBit" type="xs:int"/>
+            <xs:element name="VideoCardChipset" type="VideoCardChipsetType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="VideoCardChipsetType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="RADEON"/>
+            <xs:enumeration value="GEFORCE"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.com/HwShop"
+           xmlns="http://www.example.com/HwShop">
+
+    <xs:complexType name="CpuEntity">
+        <xs:sequence>
+            <xs:element name="frequencyMHz" type="xs:int"/>
+            <xs:element name="coreQuantity" type="xs:int"/>
+            <xs:element name="techProcessNm" type="xs:int"/>
+            <xs:element name="socket" type="SocketType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="SocketType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LGA1150"/>
+            <xs:enumeration value="LGA1155"/>
+            <xs:enumeration value="LGA1156"/>
+            <xs:enumeration value="FM1"/>
+            <xs:enumeration value="FM2"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

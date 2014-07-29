@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.com/HwShop"
+           xmlns="http://www.example.com/HwShop">
+    <xs:include schemaLocation="Cpu.xsd"/>
+
+    <xs:complexType name="MotherboardEntity">
+        <xs:sequence>
+            <xs:element name="socket" type="SocketType"/>
+            <xs:element name="vgaOnboard" type="xs:boolean"/>
+            <xs:element name="raidOnboard" type="xs:boolean"/>
+            <xs:element name="formfactorMb" type="FormFactorMbType"/>
+            <xs:element name="sataCount" type="xs:int"/>
+            <xs:element name="usbCount" type="xs:int"/>
+            <xs:element name="ddrCount" type="xs:int"/>
+            <xs:element name="maxRamSizeGb" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="FormFactorMbType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ATX"/>
+            <xs:enumeration value="MICROATX"/>
+            <xs:enumeration value="MINI_ITX"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
